@@ -1,0 +1,2 @@
+allowBuilds:
+  '@ibm/plex-math': false
