@@ -1,49 +1,17 @@
-@use '@ibm/plex-sans/scss' as PlexSans with (
-  $font-prefix: '@ibm/plex-sans',
-  $font-weights: (
-    bold: true,
-    boldItalic: false,
-    extralight: false,
-    extralightItalic: false,
-    italic: false,
-    light: false,
-    lightItalic: false,
-    medium: false,
-    mediumItalic: false,
-    regular: true,
-    semibold: false,
-    semiboldItalic: false,
-    text: false,
-    textItalic: false,
-    thin: false,
-    thinItalic: false,
-  )
-);
-@use '@ibm/plex-mono/scss' as PlexMono with (
-  $font-prefix: '@ibm/plex-mono',
-  $font-weights: (
-    bold: true,
-    boldItalic: false,
-    extralight: false,
-    extralightItalic: false,
-    italic: false,
-    light: false,
-    lightItalic: false,
-    medium: false,
-    mediumItalic: false,
-    regular: true,
-    semibold: true,
-    semiboldItalic: false,
-    text: false,
-    textItalic: false,
-    thin: false,
-    thinItalic: false,
-  )
-);
+@use '@ibm/plex-sans/scss' as PlexSans;
+@use '@ibm/plex-sans/scss/regular' as PlexSansRegular;
+@use '@ibm/plex-sans/scss/bold' as PlexSansBold;
+@use '@ibm/plex-mono/scss' as PlexMono;
+@use '@ibm/plex-mono/scss/regular' as PlexMonoRegular;
+@use '@ibm/plex-mono/scss/semibold' as PlexMonoSemibold;
+@use '@ibm/plex-mono/scss/bold' as PlexMonoBold;
 @use '@ibm/plex-math/scss' as PlexMath with (
   $font-prefix: '@ibm/plex-math'
 );
 
-@include PlexSans.all();
-@include PlexMono.all();
+@include PlexSansRegular.regularSplit('@ibm/plex-sans', PlexSans.$unicode-ranges);
+@include PlexSansBold.boldSplit('@ibm/plex-sans', PlexSans.$unicode-ranges);
+@include PlexMonoRegular.regularSplit('@ibm/plex-mono', PlexMono.$unicode-ranges);
+@include PlexMonoSemibold.semiboldSplit('@ibm/plex-mono', PlexMono.$unicode-ranges);
+@include PlexMonoBold.boldSplit('@ibm/plex-mono', PlexMono.$unicode-ranges);
 @include PlexMath.all();
