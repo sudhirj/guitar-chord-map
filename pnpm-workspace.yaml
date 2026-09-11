@@ -1,2 +1,5 @@
 allowBuilds:
   '@ibm/plex-math': false
+  '@ibm/plex-mono': false
+  '@ibm/plex-sans': false
+  '@parcel/watcher': false
